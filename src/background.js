@@ -151,15 +151,30 @@ chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
       }, 1000);
     });
     return true;
-  }else if(message.msg === 'open_side_panel'){
-    chrome.sidePanel.open({ tabId: sender.tab.id });
-    chrome.sidePanel.setOptions({
-      tabId: sender.tab.id,
-      path: 'index.html',
-      enabled: true
+  }else if(message.type === 'open_side_panel'){
+    // 使用 Promise 来处理异步操作
+    Promise.all([
+        chrome.sidePanel.open({ tabId: sender.tab.id }),
+        chrome.sidePanel.setOptions({
+            tabId: sender.tab.id,
+            path: 'src/pages/popup/index.html',
+            enabled: true
+        })
+    ]).then(() => {
+        sendResponse({ success: true });
+    }).catch((error) => {
+        console.error('Error:', error);
+        sendResponse({ success: false, error: error.message });
     });
-    return false
-  }
+    
+    return false; 
+}else if(message.type === 'sendProblemInfo') {
+  // 处理题目信息
+  console.log('Received problem info:', message.data);
+  chrome.runtime.sendMessage({ type: 'send_popup_problemInfo', data: message.data });
+  // 如果需要，可以广播到其他地方
+  return false; // 不需要异步响应
+}
 });
 
 chrome.contextMenus.create({

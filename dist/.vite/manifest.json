@@ -1,8 +1,8 @@
 {
-  "../../../../../../../@crx/manifest": {
-    "file": "assets/crx-manifest.js-T4-CoJF-.js",
+  "../../@crx/manifest": {
+    "file": "assets/crx-manifest.js-DaBk_WQz.js",
     "name": "crx-manifest.js",
-    "src": "../../../../../../../@crx/manifest",
+    "src": "../../@crx/manifest",
     "isEntry": true
   },
   "__plugin-vue_export-helper-C___feUY.js": {
@@ -14,9 +14,15 @@
     "src": "index.js-loader.js"
   },
   "src/background.js": {
-    "file": "assets/background.js-7kC1rvIK.js",
+    "file": "assets/background.js-BId-S8Vo.js",
     "name": "background.js",
     "src": "src/background.js",
+    "isEntry": true
+  },
+  "src/content/leetcode/index.js": {
+    "file": "assets/index.js-CUgE8vHX.js",
+    "name": "index.js",
+    "src": "src/content/leetcode/index.js",
     "isEntry": true
   },
   "src/content/screenshot/index.js": {
@@ -32,7 +38,7 @@
     ]
   },
   "src/pages/popup/index.html": {
-    "file": "assets/popup-DJmIj6F0.js",
+    "file": "assets/popup-CYpONZjK.js",
     "name": "popup",
     "src": "src/pages/popup/index.html",
     "isEntry": true,

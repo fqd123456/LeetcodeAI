@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen overflow-hidden flex flex-col">
     <TopUser ref="topUserComponent" />
-    <Chat ref="chatComponent" />
+    <Chat ref="chatComponent" :problemInfo="problemInfo"/>
     <UserInput ref="userInputComponent" @sendMessage="sendMessage" :free_times="free_times" :user="user" />
   </div>
 </template>
@@ -18,6 +18,7 @@ import { message, Modal } from 'ant-design-vue';
 const chatComponent = ref(null);
 const userInputComponent = ref(null);
 const topUserComponent = ref(null);
+const problemInfo = ref(null)
 
 
 const user = computed(() => {
@@ -34,6 +35,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'screenshot_base64') {
     const base64 = message.base64;
     sendMessage(false, base64)
+  }else if(message.type === 'send_popup_problemInfo'){
+    console.log("Received problem info:", message.data)
+    // alert(JSON.stringify(message.data))
+    problemInfo.value = message.data
   }
 });
 

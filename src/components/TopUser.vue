@@ -1,9 +1,10 @@
 <template>
-  <div class="h-16 border-b px-2 w-full shadow border-gray-300 flex items-center justify-between">
+  <div class="h-16 border-b px-2 w-full shadow border-gray-300 flex items-center justify-between bg-green-50">
     <h1 class="text-2xl font-bold relative z-10">
-      AI Homework Helper
+      Leetcode AI Helper
       <div class="absolute bottom-0 left-0 w-full h-4 bg-blue-200" style="z-index: -1;"></div>
     </h1>
+
 
     <div class="flex items-center space-x-4">
       <!-- user -->
