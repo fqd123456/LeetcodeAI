@@ -1,0 +1,54 @@
+{
+    "manifest_version":3,
+    "name":"LeetCode AI",
+    "version":"1.0.0",
+    "description":"help",
+    "action":{
+        "default_icon": {
+            "16": "src/assets/ai-icon16.png",
+            "48": "src/assets/ai-icon48.png",
+            "128": "src/assets/ai-icon128.png"
+        }
+    },
+    "icon":{
+        "16": "src/assets/ai-icon16.png",
+        "48": "src/assets/ai-icon48.png",
+        "128": "src/assets/ai-icon128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "runtime",
+        "storage",
+        "scripting",
+        "webRequest",
+        "webRequestBlocking",
+        "https://leetcode.com/problems/*",
+        "sidePanel",
+        "contextMenus"
+    ],
+    "host_permissions": [
+        "https://leetcode.com/problems/*"
+    ],
+    "side_panel": {
+      "default_path": "index.html"
+    },
+
+    "content_scripts":[
+        {
+            "js":[
+                "src/content/content.js"
+            ],
+            "matches":[
+               "https://leetcode.com/problems/*"
+            ],
+            "all_frames": true,
+            "run_at": "document_end",
+            "match_about_blank": true
+        }
+    ],
+    "background": {
+        "service_worker": "src/background/background.js"
+    }
+   
+}
