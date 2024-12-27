@@ -1,0 +1,46 @@
+{
+  "../../../../../../../@crx/manifest": {
+    "file": "assets/crx-manifest.js-T4-CoJF-.js",
+    "name": "crx-manifest.js",
+    "src": "../../../../../../../@crx/manifest",
+    "isEntry": true
+  },
+  "__plugin-vue_export-helper-C___feUY.js": {
+    "file": "assets/_plugin-vue_export-helper-C___feUY.js",
+    "name": "_plugin-vue_export-helper"
+  },
+  "index.js-loader.js": {
+    "file": "assets/index.js-loader-Bn9foTyW.js",
+    "src": "index.js-loader.js"
+  },
+  "src/background.js": {
+    "file": "assets/background.js-7kC1rvIK.js",
+    "name": "background.js",
+    "src": "src/background.js",
+    "isEntry": true
+  },
+  "src/content/screenshot/index.js": {
+    "file": "assets/index.js-UMWRZiC0.js",
+    "name": "index.js",
+    "src": "src/content/screenshot/index.js",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-C___feUY.js"
+    ],
+    "css": [
+      "assets/index-DtBvZ6ej.css"
+    ]
+  },
+  "src/pages/popup/index.html": {
+    "file": "assets/popup-DJmIj6F0.js",
+    "name": "popup",
+    "src": "src/pages/popup/index.html",
+    "isEntry": true,
+    "imports": [
+      "__plugin-vue_export-helper-C___feUY.js"
+    ],
+    "css": [
+      "assets/popup-CCvPQg4O.css"
+    ]
+  }
+}
