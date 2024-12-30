@@ -2,9 +2,32 @@
   <div class="  h-full bg-green-50 overflow-y-auto">
     <ul class="chat-list list-none p-0 h-full overflow-y-auto">
       <!--显示问题-->
-      <div v-if="problem" class="border rounded-md bg-[#f8f5ef] p-2 m-2 min-h-5/1">
-        <h2 class="text-black text-sm font-bold">Your current question is:</h2>
-        <span class="text-black text-sm  m-2">{{ problem }}</span>
+      <div v-if="problem" class="border rounded-md bg-[#f8f5ef] p-2 m-2 min-h-5/1 ">
+        <!-- <div> -->
+          <h2 class="text-black text-sm font-bold">Your current question is:</h2>
+          <span class="text-black text-sm  m-2">{{ problem }}</span>
+        <!-- </div> -->
+        <!-- <div>
+          <button 
+            @click="refreshPlugin" 
+            class="refresh-btn p-1 rounded-md hover:bg-gray-100"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              class="h-4 w-4" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                stroke-width="2" 
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+              />
+            </svg>
+          </button>
+        </div> -->
       </div>
       <li v-for="chat in chatList" :key="chat.id" class="my-4 mx-2">        
         <!-- 系统消息 -->
@@ -80,7 +103,7 @@ const props = defineProps({
 const chatList = ref([
   {
     id: 0,
-    content: `强大的LeetCode AI答题助手，帮助你寻找解题思路并给出代码,用特定语言进行回答:${chrome.i18n.getUILanguage()}`,
+    content: `强大的LeetCode AI答题助手，帮助你寻找解题思路并给出相应的Leetcode需要题解代码,用特定语言进行回答:${chrome.i18n.getUILanguage()}`,
     type: 'system',
   },
   {
@@ -105,14 +128,10 @@ let problem = ref(null)
 watch(() => props.problemInfo, (newValue) => {
   if (newValue) {
     // 更新 id 为 1 的消息内容
-    chatList.value[1].content = `LeetCode-${newValue}`
+    chatList.value[1].content = `LeetCode - ${newValue}`
     problem.value = chatList.value[1].content
   }
 }, { immediate: true })
-
-// let problem = chatList.value[1].content
-// console.log(problem,"problem");
-
 
 function sleep (time) {
   return new Promise((resolve) => {
@@ -122,6 +141,11 @@ function sleep (time) {
   })
 }
 
+// const refreshPlugin = () => {
+//   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+//     chrome.tabs.sendMessage(tabs[0].id, { type: 'GET_PROBLEM' });
+//   });
+// };
 
 function flashDot (index) {
   if (replyLoaidng.value === false) {
@@ -252,6 +276,7 @@ defineExpose({
 .dot:nth-child(3) {
   animation-delay: 0.4s;
 }
+
 .chat-content:hover{
   overflow-x: auto;
 }
@@ -264,6 +289,7 @@ defineExpose({
   padding: 3px;
 }
 
+
 /* 标题样式 */
 .markdown-body h1,
 .markdown-body h2,
@@ -275,18 +301,19 @@ defineExpose({
 }
 
 /* 段落样式 */
-.markdown-body p {
+/* .markdown-body p {
   margin-top: 0;
   margin-bottom: 16px;
-}
+} */
 
 /* 代码块样式 */
-.markdown-body pre {
+/* .markdown-body pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
   background-color: #0f82f5;
+  border: 1px solid #000000c3 !important;
   border-radius: 6px;
 }
 
@@ -306,19 +333,14 @@ defineExpose({
   word-break: normal;
   white-space: pre;
   background: transparent;
-  border: 0;
-}
+  border: 1px solid #000 !important;
+}  */
 /* 整个滚动条 */
 ::-webkit-scrollbar {
   width: 4px;  /* 滚动条宽度 */
   height: 4px; /* 水平滚动条高度 */
 }
 
-/* 滚动条轨道 */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
 /* 滚动条滑块 */
 ::-webkit-scrollbar-thumb {
   background: #d3d1d1;
@@ -326,7 +348,7 @@ defineExpose({
 }
 /* 鼠标悬停在滑块上时 */
 ::-webkit-scrollbar-thumb:hover {
-  background: #797878;
+  background: #a1a0a0;
 }
 
 </style>

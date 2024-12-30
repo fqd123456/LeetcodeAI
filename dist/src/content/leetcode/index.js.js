@@ -26,38 +26,65 @@ function injectAIButton(){
                   type: 'sendProblemInfo', 
                   data: problemInfo 
               })
-          }, 2000); // 延迟500ms
+          }, 2000); // 延迟2000ms
       });
       });
   }  
 }
 
+function problemChange(){
+  let lastUrl = location.href;
+  new MutationObserver(() => {
+    const url = location.href;
+    if (url !== lastUrl) {
+      lastUrl = url;
+      // 等待页面加载完成
+      setTimeout(() => {
+        const problemInfo = getProblemInfo();
+        console.log('URL changed:', problemInfo);
+        chrome.runtime.sendMessage({ 
+          type: 'sendProblemInfo', 
+          data: problemInfo 
+        });
+      }, 1000);
+    }
+  }).observe(document.body, { childList: true, subtree: true });
+}
+
 // 获取题目信息
 function getProblemInfo() {
     // const title = document.querySelector('a[href^="/problems/"]')?.textContent
-    const title = document.title.split('-')[0]
-    console.log(title,"title")
-    const para = document.querySelectorAll('p')
-    const desc = []
-    for (let p of para) {
-    if (p.textContent.trim() === '\u00A0' || p.textContent.trim() === '') {
-        break  // 遇到空白标签就停止
+    const titleParts = document.title.split('-')
+    if(titleParts.length>1){
+      const title = titleParts.slice(0,titleParts.length-1).join('-')
+      return title
     }
-    desc.push(p.textContent)
-    }
-    let description = desc.reduce((acc,cur)=>acc+cur,"")
-    // 获取当前题目信息
-    return title
+    // console.log(title,"title")
+    // const para = document.querySelectorAll('p')
+    // const desc = []
+    // for (let p of para) {
+    // if (p.textContent.trim() === '\u00A0' || p.textContent.trim() === '') {
+    //     break  // 遇到空白标签就停止
+    // }
+    // desc.push(p.textContent)
+    // }
+    // let description = desc.reduce((acc,cur)=>acc+cur,"")
+    //  获取当前题目信息
+    
 }
+
+
 
 // 页面加载后注入按钮
 if (document.readyState === 'complete') {
     console.log("页面加载完成");    
     injectAIButton();
+    problemChange();
 } 
 else {
     window.addEventListener('load', ()=>{
       injectAIButton()
+      problemChange()
     });
   }
 

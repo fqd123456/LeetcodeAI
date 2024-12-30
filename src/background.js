@@ -254,11 +254,11 @@ async function getAddonUserStatus(byStoray) {
   let g_user = await getProfileUserInfo();
   let google_uid = g_user.id;
   const header = {
-    Referer: 'https://www.livepolls.app/ai_homework_helper/chrome',
+    Referer: 'https://www.livepolls.app/ai_leetcode/chrome',
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
   };
   const response = await request({
-    url: `https://www.livepolls.app/ai_homework_helper/api/user/status?email=${g_user?.email}`,
+    url: `https://www.livepolls.app/ai_leetcode/api/user/status?email=${g_user?.email}`,
     method: 'POST',
     headers: header,
     data: {
@@ -286,7 +286,7 @@ let getUserStatusPromise = false;
 var subscribeActive = false;
 function handleSubscribe() {
   let isEdge = navigator.userAgent.toLowerCase().match(/edg/) != null;
-  const url = `https://www.livepolls.app/ai_homework_helper/pricing?close=1&from=${isEdge ? 'edge_addon' : 'chrome_addon'}`;
+  const url = `https://www.livepolls.app/ai_leetcode/pricing?close=1&from=${isEdge ? 'edge_addon' : 'chrome_addon'}`;
   chrome.tabs.create({ url }, function (tab) {
     subscribeActive = true;
     // 定义监听器函数
@@ -331,7 +331,7 @@ async function loopSubscribe() {
 var loginTabActive = false;
 async function handleLogin(subscribe = false) {
   let isEdge = navigator.userAgent.toLowerCase().match(/edg/) != null;
-  let url = subscribe ? `https://www.livepolls.app/ai_homework_helper/login?subscribe=1&from=${isEdge ? 'edge_addon' : 'chrome_addon'}` : `https://www.livepolls.app/ai_homework_helper/login?close=1&from=${isEdge ? 'edge_addon' : 'chrome_addon'}`;
+  let url = subscribe ? `https://www.livepolls.app/ai_leetcode/login?subscribe=1&from=${isEdge ? 'edge_addon' : 'chrome_addon'}` : `https://www.livepolls.app/ai_leetcode/login?close=1&from=${isEdge ? 'edge_addon' : 'chrome_addon'}`;
   console.log('打开标签页');
   chrome.tabs.create({ url }, function (tab) {
     loginTabActive = true;
@@ -390,7 +390,7 @@ function request({ url, data = null, method = 'GET', headers = null }) {
   let options = {
     method: method,
     headers: {
-      'X-Access-Channel': 'ai_homework_helper',
+      'X-Access-Channel': 'ai_leetcode',
     },
   };
 

@@ -6,7 +6,7 @@ document.body.appendChild(div);
 console.log("截图插件已经加载")
 
 console.log(div,"div")
-import { createApp } from "/vendor/.vite-deps-vue.js__v--6e891055.js"
+import { createApp } from "/vendor/.vite-deps-vue.js__v--1fd96abc.js"
 import App from "/src/content/screenshot/index.vue.js"
 // import '../../style.css'
 

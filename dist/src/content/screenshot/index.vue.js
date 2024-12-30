@@ -1,4 +1,4 @@
-import { createHotContext as __vite__createHotContext } from "/vendor/vite-client.js";import.meta.hot = __vite__createHotContext("/src/content/screenshot/index.vue.js");/* unplugin-vue-components disabled */import { nextTick, ref } from "/vendor/.vite-deps-vue.js__v--6e891055.js";
+import { createHotContext as __vite__createHotContext } from "/vendor/vite-client.js";import.meta.hot = __vite__createHotContext("/src/content/screenshot/index.vue.js");/* unplugin-vue-components disabled */import { nextTick, ref } from "/vendor/.vite-deps-vue.js__v--1fd96abc.js";
 
 
 const _sfc_main = {
@@ -715,7 +715,7 @@ return __returned__
 }
 
 }
-import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createStaticVNode as _createStaticVNode, Fragment as _Fragment, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "/vendor/.vite-deps-vue.js__v--6e891055.js"
+import { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createStaticVNode as _createStaticVNode, Fragment as _Fragment, pushScopeId as _pushScopeId, popScopeId as _popScopeId } from "/vendor/.vite-deps-vue.js__v--1fd96abc.js"
 
 const _withScopeId = n => (_pushScopeId("data-v-e1bbd270"),n=n(),_popScopeId(),n)
 const _hoisted_1 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/_createElementVNode("div", { class: "wrap" }, null, -1 /* HOISTED */))

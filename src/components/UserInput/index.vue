@@ -1,17 +1,16 @@
 <template>
-  <div class="h-52 bg-green-50 px-2">
-    <div class="flex items-center relative flex-col w-full">
-      <!-- <div class="w-full"> -->
+  <div class="h-52 bg-green-50 px-2 py-0">
+    <div class="flex items-center relative flex-col w-full mt-auto">
         <textarea type="text" noresize
           @keydown.enter.prevent="sendMessage"
           v-model="userInput"
-          class="w-full h-28 text-base box-border pb-20 rounded-xl bg-transparent border-2 border-blue-400 p-1"
+          class="w-full h-28 bottom-0 text-base box-border rounded-xl bg-transparent border-2 border-blue-400 p-1 "
           placeholder="Please enter your question"
-          :maxlength="3000">
+          :maxlength="3000"
+        >
         </textarea>
-        
-        <!-- 在textarea下方添加插槽内容的容器 -->
-        <div class="absolute bottom-0 left-0 right-0 px-2 py-0.5 flex justify-between">
+
+        <div class="absolute bottom-0 left-0 right-0 px-2 py-0.5 flex justify-between z-10">
           <div class="flex items-center">  <!-- 使用 flex 和 justify-between 创建水平布局 -->
             <PlanInfo :free_times="free_times" :user="user" />
             <label class="rounded-xl text-white p-1 px-2 ml-1 flex items-center" for="file-upload">
@@ -44,17 +43,6 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-textarea {
-  resize: none;
-}
-
-/* 确保输入框有足够的底部padding来容纳插槽内容 */
-.textarea {
-  padding-bottom: 80px; /* 根据实际内容高度调整 */
-}
-</style>
 
 <script setup>
 import { ref, defineProps, defineEmits } from 'vue'
@@ -172,4 +160,20 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 textarea {
   resize: none;
 }
+/* 整个滚动条 */
+::-webkit-scrollbar {
+  width: 4px;  /* 滚动条宽度 */
+  height: 4px; /* 水平滚动条高度 */
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background: #d3d1d1;
+  border-radius: 4px;
+}
+/* 鼠标悬停在滑块上时 */
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a0a0;
+}
+
 </style>

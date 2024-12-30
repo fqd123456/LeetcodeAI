@@ -158,8 +158,8 @@ import {
   withMemo,
   withModifiers,
   withScopeId
-} from "/vendor/.vite-deps-chunk-P4JRBGFP.js__v--babad02c.js";
-import "/vendor/.vite-deps-chunk-G3PMV62Z.js__v--babad02c.js";
+} from "/vendor/.vite-deps-chunk-P4JRBGFP.js__v--1fd96abc.js";
+import "/vendor/.vite-deps-chunk-G3PMV62Z.js__v--1fd96abc.js";
 export {
   BaseTransition,
   BaseTransitionPropsValidators,

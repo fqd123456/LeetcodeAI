@@ -89,7 +89,7 @@ const handleLogout = () => {
   // 清除user 和 chrome.storage
   user.value = {};
   chrome.storage.local.remove('user');
-  let openner = window.open('https://www.livepolls.app/ai_homework_helper/user/logout', '_blank');
+  let openner = window.open('https://www.livepolls.app/ai_leetcode/user/logout', '_blank');
   setTimeout(() => {
     openner.close();
     login(false);

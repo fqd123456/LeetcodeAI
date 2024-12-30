@@ -44,15 +44,15 @@
   "action": {
     "default_title": "Click to open panel",
     "default_icon": {
-      "16": "src/public/images/ai-icon16.png",
-      "48": "src/public/images/ai-icon48.png",
-      "128": "src/public/images/ai-icon128.png"
+      "16": "src/public/images/16.png",
+      "48": "src/public/images/48.png",
+      "128": "src/public/images/128.png"
     }
   },
   "icons": {
-    "16": "src/public/images/ai-icon16.png",
-    "48": "src/public/images/ai-icon48.png",
-    "128": "src/public/images/ai-icon128.png"
+    "16": "src/public/images/16.png",
+    "48": "src/public/images/48.png",
+    "128": "src/public/images/128.png"
   },
   "host_permissions": [
     "<all_urls>"

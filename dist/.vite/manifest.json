@@ -5,48 +5,48 @@
     "src": "../../@crx/manifest",
     "isEntry": true
   },
-  "__plugin-vue_export-helper-C___feUY.js": {
-    "file": "assets/_plugin-vue_export-helper-C___feUY.js",
+  "__plugin-vue_export-helper-BZwHZS2b.js": {
+    "file": "assets/_plugin-vue_export-helper-BZwHZS2b.js",
     "name": "_plugin-vue_export-helper"
   },
   "index.js-loader.js": {
-    "file": "assets/index.js-loader-Bn9foTyW.js",
+    "file": "assets/index.js-loader-BfjBcWiA.js",
     "src": "index.js-loader.js"
   },
   "src/background.js": {
-    "file": "assets/background.js-BId-S8Vo.js",
+    "file": "assets/background.js-DmtMmuff.js",
     "name": "background.js",
     "src": "src/background.js",
     "isEntry": true
   },
   "src/content/leetcode/index.js": {
-    "file": "assets/index.js-CUgE8vHX.js",
+    "file": "assets/index.js-C7kb_O1-.js",
     "name": "index.js",
     "src": "src/content/leetcode/index.js",
     "isEntry": true
   },
   "src/content/screenshot/index.js": {
-    "file": "assets/index.js-UMWRZiC0.js",
+    "file": "assets/index.js-yKGpUmO7.js",
     "name": "index.js",
     "src": "src/content/screenshot/index.js",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper-C___feUY.js"
+      "__plugin-vue_export-helper-BZwHZS2b.js"
     ],
     "css": [
       "assets/index-DtBvZ6ej.css"
     ]
   },
   "src/pages/popup/index.html": {
-    "file": "assets/popup-CYpONZjK.js",
+    "file": "assets/popup-kCLd1FDz.js",
     "name": "popup",
     "src": "src/pages/popup/index.html",
     "isEntry": true,
     "imports": [
-      "__plugin-vue_export-helper-C___feUY.js"
+      "__plugin-vue_export-helper-BZwHZS2b.js"
     ],
     "css": [
-      "assets/popup-CCvPQg4O.css"
+      "assets/popup-7tDkzfIk.css"
     ]
   }
 }
